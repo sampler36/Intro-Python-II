@@ -1,34 +1,21 @@
 # Implement a class to hold room information. This should have name power ups and power downs / lights_on or lights_out
 # description attributes.
 class Room:
-    def __init__ (self, name, power_up, power_down):
+    def __init__ (self, name, lights_on=True, lights_out=True):
             # attributes / fields
        self.name = name
-       self.power_up = power_up
-       self.power_down = power_down
+       self.lights_on = lights_on
+       self.lights_out = lights_out
 
     def __str__(self):
-        # create a variable to hold the output
-        output = " "
-        # concatinate the name to the output
-        output += self.name + "\n"
-        # create an indexing variable and set it to 1
-        i = 1
-        # itterate over the player
-        for c in self.categories:
-            # the index and category name in to output
-            output += " " + str(i) + "." + c.name + "\n"
-            # incremement the index variable by 1
-            i += 1
-        output += " " + str(i) + ". Quit\n"
-        # return the output
-        return output
+       return f"\nName: {self.name} \nLight On: {self.lights_on} \nLight Out: {self.lights_out} \n"
 
-class Room:
+a = Room("Room 1", True, False)
+b = Room("Room 2", True, False)
+c = Room("Room 3", True, False)
+d = Room("Room 4", False, True)
+e = Room("Room 5", True, False)
+f = Room("Room 6", False, True)
 
-    def __init__(self, name):
-        # , products)
-        self.name = name
 
-    def __str__(self):
-        return "Room closed" + self.name
+print(a)
